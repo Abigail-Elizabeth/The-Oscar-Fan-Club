@@ -1,0 +1,255 @@
+@font-face {
+    font-family: Subjectivity;
+    src: url('Subjectivity/Subjectivity-Medium.woff2') format('woff2');
+}
+
+:root {
+    font-size: 20px;
+}
+
+p,
+figcaption {
+    line-height: 1.5;
+}
+
+html {
+    --darkgreen: #102820;
+    --huntergreen: #4c6444;
+    --khaki: #caba9c;
+    --rawumber: #8a6240;
+    --cafenoir: #4d2d18;
+    font-family: Subjectivity, Georgia, 'Times New Roman', Times, serif;
+}
+
+#warning {
+    border: 1px solid black;
+    margin: auto;
+    width: 70%;
+    height: 70%;
+    background-color: rgba(0 0 0 / 80%);
+    color: white;
+    position: fixed;
+    top: 15%;
+    left: 15%;
+    padding: 1em;
+    display: block;
+    justify-items: center;
+}
+
+#warning>a {
+    float: right;
+    padding: 0.5em;
+    background-color: gray;
+    border-radius: 1em;
+    opacity: 80%;
+    color: white;
+    text-decoration: none;
+}
+
+#warning>img {
+    max-height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+audio {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 12em;
+    opacity: 75%;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    background-color: var(--khaki);
+}
+
+header img {
+    max-width: 5em;
+    opacity: 0%;
+    position: absolute;
+}
+
+nav {
+    background-color: var(--huntergreen);
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.5em;
+    margin: 5% 20% 9% 20%;
+    padding: 2em;
+    box-shadow: 1em 1em var(--darkgreen);
+    border-radius: 15px;
+}
+
+nav a {
+    color: black;
+}
+
+section {
+    display: grid;
+}
+
+h2 {
+    background-color: var(--cafenoir);
+    border-radius: 15px;
+    place-self: center;
+    padding: 0.5em;
+}
+
+#history {
+    background-color: var(--rawumber);
+    padding: 0.5em;
+}
+
+main {
+    background-color: var(--khaki);
+    color: black;
+}
+
+.one {
+    background-color: var(--khaki);
+    padding: 0.5em;
+}
+
+.two {
+    background-color: var(--rawumber);
+    padding: 0.5em;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+figcaption {
+    padding: 1em 0;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+footer {
+    color: var(--darkgreen);
+    padding: 1em;
+}
+
+footer a {
+    color: var(--darkgreen);
+}
+
+@media screen and (min-width: 650px) {
+    header img {
+        opacity: 100%;
+        position: static;
+    }
+
+    nav {
+        margin: 5% 20% 7% 20%;
+        place-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    #profiles>section,
+    #blogs>.two {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-areas:
+            "heading heading"
+            "image text";
+        align-items: center;
+        justify-items: center;
+    }
+
+    #blogs>.one {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-areas:
+            "heading heading"
+            "text image";
+        align-items: center;
+        justify-items: center;
+    }
+
+    #profiles h3,
+    #blogs h2 {
+        grid-area: heading;
+    }
+
+    img {
+        grid-area: image;
+    }
+
+    #profiles p,
+    #blogs p {
+        grid-area: text;
+        padding: 1em;
+    }
+
+    #gallery {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: 15% 85%;
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+        align-items: stretch;
+        justify-items: stretch;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    nav {
+        grid-area: nav;
+        display: block;
+        background-color: var(--huntergreen);
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        border-radius: 0px;
+    }
+
+    nav a {
+        padding: 0.5em;
+        display: block;
+        place-self: start;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    #gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
