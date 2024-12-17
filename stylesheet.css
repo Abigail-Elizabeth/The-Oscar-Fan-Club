@@ -41,13 +41,16 @@ html {
 }
 
 #warning>a {
-    float: right;
+    position: absolute; 
+    top: 1em; 
+    right: 1em; 
     padding: 0.5em;
     background-color: gray;
     border-radius: 1em;
-    opacity: 80%;
+    opacity: 0.8;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 #warning>img {
